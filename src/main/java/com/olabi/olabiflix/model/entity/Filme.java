@@ -19,6 +19,7 @@ public class Filme {
     private String year;
     private String rated;
     private String released;
+    private String runtime;
     private String genre;
     private String director;
     private String writer;
@@ -33,12 +34,13 @@ public class Filme {
     public Filme() {
     }
 
-    public Filme(String title, String year, String rated, String released, String genre, String director, String writer, String actors, String plot, String language, String country, String awards) {
+    public Filme(String title, String year, String rated, String released, String runtime, String genre, String director, String writer, String actors, String plot, String language, String country, String awards) {
         this.id = UUID.randomUUID();
         this.title = title;
         this.year = year;
         this.rated = rated;
         this.released = released;
+        this.runtime = runtime;
         this.genre = genre;
         this.director = director;
         this.writer = writer;
@@ -101,6 +103,9 @@ public class Filme {
         return awards;
     }
 
+    public String getRuntime() {
+        return runtime;
+    }
 
 
     @Override
@@ -111,6 +116,7 @@ public class Filme {
             ", year='" + year + '\'' +
             ", rated='" + rated + '\'' +
             ", released='" + released + '\'' +
+            ", runtime='" + runtime + '\'' +
             ", genre='" + genre + '\'' +
             ", director='" + director + '\'' +
             ", writer='" + writer + '\'' +

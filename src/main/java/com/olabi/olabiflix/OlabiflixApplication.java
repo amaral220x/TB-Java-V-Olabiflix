@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.olabi.olabiflix.model.entity.Filme;
+import com.olabi.olabiflix.model.entity.Serie;
 import com.olabi.olabiflix.repository.FilmeRepository;
+import com.olabi.olabiflix.repository.SerieRepository;
 
 import java.util.List;
 
@@ -14,10 +16,12 @@ import java.util.List;
 @RestController
 public class OlabiflixApplication {
 
-	private final FilmeRepository repository;
+	private final FilmeRepository filmeRepository;
+	private final SerieRepository serieRepository;
 
-	public OlabiflixApplication(FilmeRepository repository) {
-		this.repository = repository;
+	public OlabiflixApplication(FilmeRepository filmeRepository, SerieRepository serieRepository) {
+		this.filmeRepository = filmeRepository;
+		this.serieRepository = serieRepository;
 	}
 
 	public static void main(String[] args) {
@@ -31,11 +35,11 @@ public class OlabiflixApplication {
 
 	@GetMapping("/filmes")
 	public List<Filme> getFilmes(){
-		System.out.println("Rodando a classe DatabaseInitializer");
-		System.out.println(repository);
-		for (Filme filme : repository.findAll()) {
-			System.out.println(filme);
-		}
-		return repository.findAll();
+		return filmeRepository.findAll();
+	}
+
+	@GetMapping("/series")
+	public List<Serie> getSeries(){
+		return serieRepository.findAll();
 	}
 }
