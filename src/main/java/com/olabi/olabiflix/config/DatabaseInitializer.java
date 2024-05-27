@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Configuration; // Import the Confi
 import com.olabi.olabiflix.model.entity.Filme;
 import com.olabi.olabiflix.repository.FilmeRepository;
 import com.olabi.olabiflix.model.entity.Serie;
+import com.olabi.olabiflix.model.value.Ratings;
 import com.olabi.olabiflix.repository.SerieRepository;
-import com.olabi.olabiflix.model.utils.Ratings;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +43,7 @@ public class DatabaseInitializer implements CommandLineRunner {
     );
 
     public static List<Serie> series = List.of(
-        new Serie("The Office", "9", "Comedy", "Greg Daniels", "https://m.media-amazon.com/images/M/MV5BMDNkOTE4NDQtMTNmYi00MWE0LWE4ZTktYTc0NzhhNWIzNzJiXkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_SX300.jpg", new ArrayList<String>(Arrays.asList("Rainn Wilson", "John Krasinskyi", "Jenna Fischer")), new Ratings("8.9", "380944"))    
+        new Serie("The Office", "9", new ArrayList<String>(Arrays.asList("Comedy")), "Greg Daniels", "https://m.media-amazon.com/images/M/MV5BMDNkOTE4NDQtMTNmYi00MWE0LWE4ZTktYTc0NzhhNWIzNzJiXkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_SX300.jpg", new ArrayList<String>(Arrays.asList("Rainn Wilson", "John Krasinskyi", "Jenna Fischer")), new Ratings("8.9", "380944"))    
     );
     
 }

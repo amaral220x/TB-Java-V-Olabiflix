@@ -9,7 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
-import com.olabi.olabiflix.model.utils.Ratings;
+
+import com.olabi.olabiflix.model.value.Ratings;
 
 
 
@@ -23,7 +24,7 @@ public class Serie {
     UUID id; 
     String title;
     String totalSeasons;
-    String genre;
+    ArrayList<String> genre;
     String writers;
     String poster; //URL do poster
     ArrayList<String> actors;
@@ -33,7 +34,7 @@ public class Serie {
     public Serie() {
     }
 
-    public Serie(String title, String totalSeasons, String genre, String writers, String poster, ArrayList<String> actors, Ratings ratings) {
+    public Serie(String title, String totalSeasons, ArrayList<String> genre, String writers, String poster, ArrayList<String> actors, Ratings ratings) {
         this.id = UUID.randomUUID();
         this.title = title;
         this.totalSeasons = totalSeasons;
@@ -56,7 +57,7 @@ public class Serie {
         return totalSeasons;
     }
 
-    public String getGenre() {
+    public ArrayList<String> getGenre() {
         return genre;
     }
 

@@ -1,4 +1,4 @@
-package com.olabi.olabiflix.model.utils;
+package com.olabi.olabiflix.model.value;
 
 import javax.persistence.Embeddable;
 
